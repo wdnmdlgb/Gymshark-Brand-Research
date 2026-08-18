@@ -6,6 +6,19 @@
 
 ---
 
+## 📖 快速预览
+
+| 文件 | 说明 | 在线预览 |
+|------|------|----------|
+| 研究报告PDF | 12页完整报告（含图表） | [点击在线查看](https://github.com/wdnmdlgb/Gymshark-Brand-Research/blob/master/report/Gymshark%E5%93%81%E7%89%8C%E6%B7%B1%E5%BA%A6%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A.pdf) |
+| 品牌能力雷达图 | 三品牌七维对比 | [交互图表](https://github.com/wdnmdlgb/Gymshark-Brand-Research/blob/master/charts/01_radar_brand_comparison.html) |
+| 价格带柱状图 | 五品类价格对比 | [交互图表](https://github.com/wdnmdlgb/Gymshark-Brand-Research/blob/master/charts/02_bar_price_comparison.html) |
+| 用户痛点饼图 | 负面反馈分布 | [交互图表](https://github.com/wdnmdlgb/Gymshark-Brand-Research/blob/master/charts/03_pie_user_painpoints.html) |
+
+> 💡 PDF可直接在浏览器中预览，无需下载；HTML图表需下载后本地打开查看交互效果。
+
+---
+
 ## 🎯 项目目标
 
 拆解英国DTC健身服饰品牌 **Gymshark** 从车库创业到全球标杆的商业成功逻辑，横向对标 **Lululemon**、**Alphalete** 两家竞品，从品牌、产品、营销、社区、本地化、APP协同六大维度深度分析，最终总结中国健身服饰品牌出海欧洲的可复用策略与风险提示。
@@ -21,6 +34,7 @@ Gymshark-Brand-Research/
 ├── data/
 │   └── Gymshark竞品对比分析表.xlsx     # 6个Sheet多维竞品对比表
 ├── report/
+│   ├── Gymshark品牌深度研究报告.pdf    # 12页PDF报告（可在线预览）
 │   ├── Gymshark品牌深度研究报告.pptx   # 12页PPT研究报告（可编辑）
 │   ├── Gymshark品牌深度研究报告.md     # 完整报告Markdown版
 │   ├── 研究报告大纲.md                 # 12页报告逐页框架
@@ -111,12 +125,15 @@ Gymshark-Brand-Research/
 
 | 文件 | 说明 |
 |------|------|
-| `data/Gymshark竞品对比分析表.xlsx` | 6个Sheet：品牌基础/产品线价格/营销打法/欧洲本地化/APP对比/爆款单品 |
-| `report/Gymshark品牌深度研究报告.pptx` | 12页可编辑PPT，深蓝商务配色，含3个图表占位 |
+| `report/Gymshark品牌深度研究报告.pdf` | **12页PDF报告，GitHub可直接在线预览**，含3张数据可视化图表 |
+| `report/Gymshark品牌深度研究报告.pptx` | 12页可编辑PPT，深蓝商务配色 |
 | `report/Gymshark品牌深度研究报告.md` | 完整12页报告文字版，含图表分析嵌入 |
 | `report/用户反馈分析.md` | 基于公开平台用户评论的5类痛点深度拆解 |
+| `data/Gymshark竞品对比分析表.xlsx` | 6个Sheet：品牌基础/产品线价格/营销打法/欧洲本地化/APP对比/爆款单品 |
 | `scripts/generate_excel.py` | 可复用的Excel生成脚本，运行后自动生成6-Sheet对比表 |
 | `scripts/generate_ppt.py` | 可复用的PPT生成脚本，运行后自动生成12页报告 |
+| `scripts/generate_charts_and_update_ppt.py` | 图表生成+PPT插入脚本 |
+| `scripts/ppt_to_pdf.py` | PPT转PDF脚本 |
 
 ---
 

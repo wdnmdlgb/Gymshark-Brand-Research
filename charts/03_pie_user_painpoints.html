@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户负面反馈痛点分布 - Gymshark品牌研究</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <style>
+        body { margin: 0; padding: 20px; font-family: 'Microsoft YaHei', sans-serif; background: #f5f5f5; }
+        .container { max-width: 900px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #1F3A5F; text-align: center; margin-bottom: 10px; }
+        .subtitle { text-align: center; color: #666; margin-bottom: 20px; }
+        #chart { width: 100%; height: 550px; }
+        .note { margin-top: 20px; padding: 15px; background: #f0f4f8; border-radius: 4px; color: #333; font-size: 14px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gymshark用户负面反馈痛点分布</h1>
+        <p class="subtitle">数据来源：Trustpilot、Sitejabber、BBB、Reddit、官网产品评论，按投诉主题分类统计</p>
+        <div id="chart"></div>
+        <div class="note">
+            <strong>关键发现：</strong>尺码不一致是第一大投诉点（30%），各系列尺码标准不统一且洗后缩水；面料耐用性（透视、缝线开裂）占25%；客服售后响应慢占20%。这三项合计75%，是Gymshark最需改善的品控与服务短板，也是中端DTC品牌规模扩张后的典型成长烦恼。
+        </div>
+    </div>
+    <script>
+        var chart = echarts.init(document.getElementById('chart'));
+        var option = {
+            tooltip: { trigger: 'item', formatter: '{b}: {c}% ({d}%)' },
+            legend: { orient: 'vertical', left: 'left', top: 'middle', textStyle: { fontSize: 12 } },
+            series: [{
+                type: 'pie',
+                radius: ['40%', '70%'],
+                center: ['60%', '50%'],
+                avoidLabelOverlap: true,
+                itemStyle: { borderRadius: 6, borderColor: '#fff', borderWidth: 2 },
+                label: { fontSize: 12, formatter: '{b}\n{c}%' },
+                data: [
+                    { value: 30, name: '尺码不一致', itemStyle: { color: '#2F5496' } },
+                    { value: 25, name: '面料耐用性', itemStyle: { color: '#E8A87C' } },
+                    { value: 20, name: '客服与售后', itemStyle: { color: '#85CDCA' } },
+                    { value: 15, name: '限量发售/APP体验', itemStyle: { color: '#C38D9E' } },
+                    { value: 10, name: '运动内衣支撑不足', itemStyle: { color: '#E27D60' } }
+                ]
+            }]
+        };
+        chart.setOption(option);
+        window.addEventListener('resize', function() { chart.resize(); });
+    </script>
+</body>
+</html>

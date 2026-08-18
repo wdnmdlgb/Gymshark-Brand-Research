@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>品牌多维度能力雷达图 - Gymshark品牌研究</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <style>
+        body { margin: 0; padding: 20px; font-family: 'Microsoft YaHei', sans-serif; background: #f5f5f5; }
+        .container { max-width: 900px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #1F3A5F; text-align: center; margin-bottom: 10px; }
+        .subtitle { text-align: center; color: #666; margin-bottom: 20px; }
+        #chart { width: 100%; height: 600px; }
+        .note { margin-top: 20px; padding: 15px; background: #f0f4f8; border-radius: 4px; color: #333; font-size: 14px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>健身服饰品牌多维度能力对比</h1>
+        <p class="subtitle">Gymshark vs Lululemon vs Alphalete | 评分基于公开数据综合评估（1-10分）</p>
+        <div id="chart"></div>
+        <div class="note">
+            <strong>关键发现：</strong>Gymshark在社区文化（10分）和KOL营销（10分）两项满分，产品性价比（9分）领先；Lululemon品牌影响力（10分）和线下渠道（10分）绝对优势，但性价比最低（4分）；Alphalete整体规模较小，KOL营销（8分）是相对强项。
+        </div>
+    </div>
+    <script>
+        var chart = echarts.init(document.getElementById('chart'));
+        var option = {
+            tooltip: { trigger: 'item' },
+            legend: { data: ['Gymshark', 'Lululemon', 'Alphalete'], bottom: 10, textStyle: { fontSize: 13 } },
+            radar: {
+                indicator: [
+                    { name: '品牌影响力', max: 10 },
+                    { name: '产品性价比', max: 10 },
+                    { name: '社区文化', max: 10 },
+                    { name: 'KOL营销', max: 10 },
+                    { name: '欧洲本地化', max: 10 },
+                    { name: 'APP生态', max: 10 },
+                    { name: '线下渠道', max: 10 }
+                ],
+                center: ['50%', '50%'],
+                radius: '65%',
+                axisName: { fontSize: 13, color: '#333' }
+            },
+            series: [{
+                type: 'radar',
+                data: [
+                    { value: [8, 9, 10, 10, 7, 8, 6], name: 'Gymshark', areaStyle: { opacity: 0.2 }, lineStyle: { width: 2 }, itemStyle: { color: '#2F5496' } },
+                    { value: [10, 4, 7, 6, 9, 7, 10], name: 'Lululemon', areaStyle: { opacity: 0.15 }, lineStyle: { width: 2 }, itemStyle: { color: '#E8A87C' } },
+                    { value: [5, 7, 6, 8, 3, 3, 4], name: 'Alphalete', areaStyle: { opacity: 0.15 }, lineStyle: { width: 2 }, itemStyle: { color: '#85CDCA' } }
+                ]
+            }]
+        };
+        chart.setOption(option);
+        window.addEventListener('resize', function() { chart.resize(); });
+    </script>
+</body>
+</html>

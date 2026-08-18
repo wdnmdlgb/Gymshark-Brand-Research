@@ -27,8 +27,16 @@ Gymshark-Brand-Research/
 │   └── 用户反馈分析.md                 # 用户评论痛点分类深度分析
 ├── scripts/
 │   ├── generate_excel.py              # Excel竞品对比表生成脚本
-│   └── generate_ppt.py                # PPT报告生成脚本
-└── materials/                         # 素材归档（官网截图、社媒截图等）
+│   ├── generate_ppt.py                # PPT报告生成脚本
+│   └── generate_charts_and_update_ppt.py  # 图表生成+PPT插入脚本
+├── charts/                            # ECharts交互式数据可视化
+│   ├── 01_radar_brand_comparison.html # 品牌多维度能力雷达图
+│   ├── 02_bar_price_comparison.html   # 核心品类价格带柱状图
+│   └── 03_pie_user_painpoints.html    # 用户负面反馈痛点饼图
+└── materials/                         # 素材归档（图表PNG、官网截图等）
+    ├── chart_radar.png
+    ├── chart_bar.png
+    └── chart_pie.png
 ```
 
 ---
@@ -90,10 +98,12 @@ Gymshark-Brand-Research/
 
 ## 📊 数据可视化
 
-项目包含三张ECharts交互图表（嵌入PPT报告）：
+项目包含三张ECharts交互图表（`charts/`目录，浏览器直接打开HTML即可交互查看）：
 1. **品牌多维度能力雷达图**：Gymshark vs Lululemon vs Alphalete 七维能力对比
 2. **核心品类价格带柱状图**：五品类三品牌价格横向对比
 3. **用户负面反馈饼图**：五大痛点占比分布
+
+同时在 `materials/` 目录提供对应PNG图片，已嵌入PPT报告。
 
 ---
 

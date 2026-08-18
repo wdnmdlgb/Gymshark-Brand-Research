@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>核心品类价格带对比 - Gymshark品牌研究</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <style>
+        body { margin: 0; padding: 20px; font-family: 'Microsoft YaHei', sans-serif; background: #f5f5f5; }
+        .container { max-width: 1000px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #1F3A5F; text-align: center; margin-bottom: 10px; }
+        .subtitle { text-align: center; color: #666; margin-bottom: 20px; }
+        #chart { width: 100%; height: 550px; }
+        .note { margin-top: 20px; padding: 15px; background: #f0f4f8; border-radius: 4px; color: #333; font-size: 14px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>核心品类价格带对比（USD）</h1>
+        <p class="subtitle">数据来源：各品牌官网2026年8月在售商品价格中位值</p>
+        <div id="chart"></div>
+        <div class="note">
+            <strong>关键发现：</strong>Gymshark全品类价格均为三家最低，核心品类Leggings中位价$65，比Lululemon（$120）低约46%，比Alphalete（$70）低约7%。这种定价策略精准卡位"中端市场"——既区别于亚马逊等低价白牌（$20-30），又避开Lululemon的高端红海（$100+），在$40-80区间形成差异化竞争。
+        </div>
+    </div>
+    <script>
+        var chart = echarts.init(document.getElementById('chart'));
+        var option = {
+            tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+            legend: { data: ['Gymshark', 'Lululemon', 'Alphalete'], bottom: 10, textStyle: { fontSize: 13 } },
+            grid: { left: '3%', right: '4%', bottom: '15%', top: '10%', containLabel: true },
+            xAxis: { type: 'category', data: ['Leggings', '训练短裤', '运动背心', '连帽衫', '运动内衣'], axisLabel: { fontSize: 12 } },
+            yAxis: { type: 'value', name: '价格(USD)', nameTextStyle: { fontSize: 12 }, axisLabel: { fontSize: 12 } },
+            series: [
+                { name: 'Gymshark', type: 'bar', data: [65, 55, 35, 100, 42], itemStyle: { color: '#2F5496' }, barWidth: '25%' },
+                { name: 'Lululemon', type: 'bar', data: [120, 78, 68, 140, 60], itemStyle: { color: '#E8A87C' }, barWidth: '25%' },
+                { name: 'Alphalete', type: 'bar', data: [70, 60, 45, 110, 50], itemStyle: { color: '#85CDCA' }, barWidth: '25%' }
+            ]
+        };
+        chart.setOption(option);
+        window.addEventListener('resize', function() { chart.resize(); });
+    </script>
+</body>
+</html>
